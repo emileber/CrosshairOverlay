@@ -1,0 +1,3 @@
+[submodule "ext/PrismalUtils"]
+	path = ext/PrismalUtils
+	url = https://github.com/PrismalStudio/PrismalUtils.git

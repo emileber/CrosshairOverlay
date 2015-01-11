@@ -1,0 +1,10 @@
+Thank you for trying this application.
+
+Press...
+W,A,S,D - moves the crosshair pixel by pixel for fine tuning the position.
+P - to activate the positionning, then click where you want the crosshair.
+O - to open a file (PNG, BMP), alpha channel is supported
+R - to reset to default values.
+
+N.B. you have to select the Crosshair app in your taskbar
+     after each click since the app is clickthrough.
