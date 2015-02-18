@@ -1,7 +1,7 @@
 /*
- * @file	CrosshairParam.h
+ * @file	WindowParam.h
  * @date	2014-12-31
- * @author	Emile
+ * @author	Emile Bergeron <contact+source@prismalstudio.com>
  * @brief	
  */
 
@@ -27,7 +27,7 @@ class WindowParam
 
 		const RECT& getRect() const;
 		void setRect(const RECT& rect);
-		void setSize(LONG width = 40, LONG height = 40);
+		void setSize(LONG width = 20, LONG height = 20);
 		LONG getWidth() const;
 		LONG getHeight() const;
 		void setPosition(POINT pos);

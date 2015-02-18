@@ -1,10 +1,11 @@
-//============================================================================
-// Name        : Main.cpp
-// Author      : Emile Bergeron <emile.bergeron1@uqac.ca>
-// Version     :
-// Copyright   : 
-// Description : Windows that act as an always on top overlay.
-//============================================================================
+/**
+ * @file	Main.cpp
+ * @date	2015-01-03
+ * @author	Emile Bergeron <contact+source@prismalstudio.com>
+ * @brief	Windows that act as an always on top overlay.
+ *
+ *
+ */
 
 #include "WindowController.h"
 
@@ -38,15 +39,15 @@ int WINAPI WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance,
 	{
 		return 0; // failed to register
 	}
-	cout << "WinMain: registering OK" << endl;
+	//cout << "WinMain: registering OK" << endl;
 	if (!mainApp->create(nCmdShow))
 	{
 		cout << "WinMain: create failed... hwnd null." << endl;
 		return 0;
 	}
-	cout << "WinMain create OK" << endl;
+	//cout << "WinMain create OK" << endl;
 	int nReturn = mainApp->messageLoop();
-	cout << "WinMain returning: " << nReturn << endl;
+	//cout << "WinMain returning: " << nReturn << endl;
 	WindowController::kill();
 	return nReturn;
 }

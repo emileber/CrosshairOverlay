@@ -1,7 +1,7 @@
-/*
- * @file	CrosshairWindowController.h
+/**
+ * @file	WindowController.h
  * @date	2015-01-03
- * @author	Emile
+ * @author	Emile Bergeron <contact+source@prismalstudio.com>
  * @brief	
  */
 

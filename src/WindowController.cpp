@@ -1,11 +1,10 @@
-/*
+/**
  * @file	WindowController.cpp
  * @date	2015-01-03
- * @author	Emile
+ * @author	Emile Bergeron <contact+source@prismalstudio.com>
  * @brief	
  */
-#define _WIN32_WINNT 0x0501 // needed for UpdateLayeredWindow and its flags
-#include "WindowController.h"
+#define _WIN32_WINNT 0x0501 // needed for UpdateLayeredWindow and its flags#include "WindowController.h"
 
 #include "WindowParam.h"
 
@@ -90,7 +89,7 @@ WindowController::WindowController() :
 
 void WindowController::onSize(HWND hwnd)
 {
-	cout << "WindowController::onSize" << endl;
+	//cout << "WindowController::onSize" << endl;
 
 	if (mImage)
 	{
@@ -166,7 +165,7 @@ bool WindowController::registerInstance(HINSTANCE hInstance)
 
 bool WindowController::create(int nCmdShow)
 {
-	cout << "WindowController::create" << endl;
+	//cout << "WindowController::create" << endl;
 	/* The class is registered, let's create the program*/
 	mHwnd =
 	CreateWindowEx(WS_EX_LAYERED | WS_EX_TOPMOST | WS_EX_TRANSPARENT, /* Extended possibilites for variation */
@@ -227,15 +226,25 @@ void WindowController::onCreate(HWND hwnd)
 	//
 	// fight Killing Floor
 	//
-	HWND killingFloorHwnd = FindWindow(NULL, "Killing Floor");
-	if (killingFloorHwnd)
+	HWND OtherWindowHandle = FindWindow(NULL, "Killing Floor");
+	if (OtherWindowHandle)
 	{
-		std::cout << "Getting killing floor window worked!" << std::endl;
+		//std::cout << "Getting killing floor window worked!" << std::endl;
 		//HWND_NOTOPMOST
-		SetWindowPos(killingFloorHwnd,
+		SetWindowPos(OtherWindowHandle,
 		HWND_NOTOPMOST, 0, 0, 0, 0,
 		SWP_NOMOVE | SWP_NOSIZE);
 	}
+	OtherWindowHandle = FindWindow(NULL, "Counter-Strike: Global Offensive");
+	if (OtherWindowHandle)
+	{
+		//std::cout << "Getting CSGO window worked!" << std::endl;
+		//HWND_NOTOPMOST
+		SetWindowPos(OtherWindowHandle,
+		HWND_NOTOPMOST, 0, 0, 0, 0,
+		SWP_NOMOVE | SWP_NOSIZE);
+	}
+
 }
 
 void WindowController::onChar(HWND hwnd, wchar_t c)
@@ -337,7 +346,7 @@ void WindowController::draw(HDC hdc)
 	{
 		LONG w = mParam.getWidth();
 		LONG h = mParam.getHeight();
-		Gdiplus::Pen pen(Gdiplus::Color(128, 0, 0, 255));
+		Gdiplus::Pen pen(Gdiplus::Color(128, 255, 0, 0));
 		graphics.SetCompositingQuality(
 				Gdiplus::CompositingQualityGammaCorrected);
 		graphics.DrawLine(&pen, 0, h / 2, w, h / 2);

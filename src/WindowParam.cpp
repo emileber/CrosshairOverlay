@@ -1,7 +1,7 @@
 /*
- * @file	CrosshairParam.cpp
+ * @file	WindowParam.cpp
  * @date	2014-12-31
- * @author	Emile
+ * @author	Emile Bergeron <contact+source@prismalstudio.com>
  * @brief	
  */
 
